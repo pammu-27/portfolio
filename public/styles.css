@@ -1,0 +1,605 @@
+/* Global Styles */
+body, html {
+    font-family:'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0B0C10; /* Almost Black */
+    color: #C5C6C7; /* Silver */
+    animation: fadeIn 1s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(45deg, #1F2833, #0B0C10); /* Dark Slate Gray to Almost Black */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #C5C6C7; /* Silver */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #66FCF1; /* Light Blue */
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #66FCF1; /* Light Blue */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: #66FCF1; /* Light Blue */
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background: #0B0C10; /* Almost Black */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        display: none;
+        flex-wrap: nowrap;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 15px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a::after {
+        display: none;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        display: block;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #C5C6C7; /* Silver */
+        margin: 5px 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Header and Section Styles */
+
+header {
+    padding: 100px 20px;
+    background: #1F2833; /* Dark Slate Gray */
+    color: #C5C6C7; /* Silver */
+    margin-top: 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center-align text */
+    position: relative; /* Relative to ensure no layout shifts */
+}
+
+.section {
+    padding: 100px 20px;
+    background: #1F2833; /* Dark Slate Gray */
+    color: #C5C6C7; /* Silver */
+    margin-top: 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-align: center; /* Center-align text */
+    position: relative; /* Relative to ensure no layout shifts */
+}
+
+header h1, .section h2 {
+    color: #66FCF1; /* Light Blue */
+    margin-bottom: 20px;
+}
+
+header p, .section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Transition for elements */
+header, .section, .cta-button {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: translateY(0); /* Ensure transform does not impact layout */
+}
+
+/* Smooth typing effect */
+@keyframes strokeAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.stroked-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(45deg, #66FCF1, #45A29E); /* Gradient colors */
+    background-clip: text;
+    -webkit-background-clip: text; /* For WebKit browsers */
+    background-size: 200% 200%;
+    animation: strokeAnimation 2s linear infinite;
+    text-shadow: 
+        -1px -1px 0 #66FCF1,  
+         1px -1px 0 #66FCF1,
+        -1px  1px 0 #66FCF1,
+         1px  1px 0 #66FCF1; /* Stroke effect */
+}
+
+
+
+
+
+.cta-container {
+    text-align: center; /* Center the button */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #66FCF1; /* Light Blue */
+    color: #0B0C10; /* Almost Black */
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background: #32b2e9; /* Teal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.section:hover {
+    box-shadow: 0 8px 20px rgba(102, 252, 241, 0.3); /* Light Blue */
+    transform: translateY(-5px);
+}
+/* About Section */
+.about-section {
+    background: #1F2833; /* Dark Slate Gray */
+    color: #C5C6C7; /* Silver */
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-top: 60px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 20px; /* Space between items */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-img-left {
+    flex: 1; /* Takes equal space */
+    text-align: center; /* Center the image */
+}
+
+.about-img-left img {
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    flex: 2; /* Takes more space than image */
+    text-align: center; /* Center text */
+}
+
+.about-text h2 {
+    color: #66FCF1; /* Light Blue */
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img-left {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills-list li {
+    background: #1F2833; /* Dark Slate Gray */
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 2s ease-in-out 2s; /* Delay for effect */
+}
+.skills-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(102, 252, 241, 0.3); /* Light Blue */
+    transform: translateY(-5px);
+
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #0B0C10; /* Almost Black */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 2s ease-in-out 3s; /* Delay for effect */
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(102, 252, 241, 0.3); /* Light Blue */
+    transform: translateY(-5px);
+
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: #1F2833; /* Dark Slate Gray */
+    padding: 20px;
+    border-radius: 15px; /* Increased border radius for form */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow on hover */
+}
+
+form:hover {
+    box-shadow: 0 6px 20px rgba(102, 252, 241, 0.5); /* Light Blue shadow on hover */
+}
+
+form label, form input, form textarea {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #C5C6C7; /* Silver */
+    display: block;
+    width: 100%; /* Ensures full width alignment */
+}
+
+form input, form textarea {
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 10px; /* Border radius for input and textarea */
+    font-size: 1rem;
+    background: #0B0C10; /* Almost Black */
+    color: #C5C6C7; /* Silver */
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form textarea {
+    resize: vertical; /* Allows vertical resizing only */
+    min-height: 100px; /* Ensures a minimum height for text areas */
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #66FCF1; /* Light Blue */
+    box-shadow: 0 4px 8px rgba(102, 252, 241, 0.5); /* Light Blue shadow on focus */
+}
+
+form button {
+    padding: 10px 20px;
+    background: #66FCF1; /* Light Blue */
+    border: none;
+    border-radius: 10px; /* Border radius for button */
+    color: #0B0C10; /* Almost Black */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+form button:hover {
+    background: #45A29E; /* Teal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background: #1F2833; /* Dark Slate Gray */
+    padding: 20px;
+    text-align: center;
+    color: #C5C6C7; /* Silver */
+    margin-top: 40px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding-top: 80px; /* Adjust based on your navbar height */
+    margin-top: -80px; /* Offset to prevent the section from being hidden behind the fixed navbar */
+}
+
+
+/* Initial state of the page (hidden) */
+.page-transition {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* State when the page is visible */
+.page-transition.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        background: #0B0C10; /* Almost Black */
+        position: absolute;
+        top: 60px; /* Just below the navbar */
+        right: 20px; /* Align with the right edge */
+        width: 250px; /* Adjust width as needed */
+        max-height: calc(100vh - 60px); /* Maximum height of the menu */
+        overflow-y: auto; /* Allow scrolling if content overflows */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+        opacity: 0; /* Initially hidden */
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when toggle is active */
+        max-height: calc(100vh - 60px); /* Full height but not exceeding viewport */
+        opacity: 1; /* Visible */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center; /* Center text inside each menu item */
+    }
+
+    nav ul li a {
+        padding: 15px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #333; /* Add a border for separation */
+    }
+
+    nav ul li a:last-child {
+        border-bottom: none; /* Remove border from the last item */
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #C5C6C7; /* Silver */
+        margin: 5px 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* Background Dot Animation */
+.background-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Place behind other content */
+}
+
+.background-dots::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #66FCF1 20%, transparent 20%) center center;
+    background-size: 50px 50px;
+    animation: dotAnimation 10s linear infinite;
+}
+
+@keyframes dotAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Ensure that content is not hidden behind the animation */
+body {
+    position: relative;
+}
+
+
+/* Default state */
+.pointer-hover {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.pointer-hover:hover {
+    transform: scale(1.1); /* Slightly scale up the element */
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.6); /* Glow effect */
+}
+
+
+/* Container for ripple effect */
+.ripple {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Ripple animation */
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(102, 252, 241, 0.4); /* Light Blue ripple */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s, opacity 0.6s;
+    opacity: 0;
+}
+
+/* Trigger ripple effect on click */
+.ripple:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+

@@ -10,23 +10,32 @@
     <title>Pramod's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNBG4KFS1Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TNBG4KFS1Z');
+</script>
+
 </head>
 <body>
     <div id="cursor-follow"></div>
 
-        
-    
     <header>
-    <div class="container">
-        <div class="intro-text">
-            <h1 class="stroked-text">Welcome to My Portfolio</h1>
-            <p> I'm Pramod, a Graphic and Web Designer</p>
+        <div class="container">
+            <div class="intro-text">
+                <h1 class="stroked-text">Welcome to My Portfolio</h1>
+                <p> I'm Pramod, a Passionate Graphic and Web Designer</p>
+            </div>
+            <div class="cta-container">
+                <a href="#contact" class="cta-button" target="_blank">Get in Touch</a>
+            </div>
         </div>
-        <div class="cta-container">
-            <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
-    </div>
-</header>
+    </header>
 
     <nav>
         <div class="container">
@@ -36,8 +45,9 @@
                 <span></span>
             </div>
             <ul>
-                <li><a href="#home" >Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -56,18 +66,62 @@
             </div>
         </div>
     </section>
-    
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <h3>Graphic Design</h3>
+                    <p>Creating visually appealing designs for branding, marketing, and more using Adobe Photoshop, CorelDraw, and other tools.</p>
+                </div>
+                <div class="service">
+                    <h3>Web Development</h3>
+                    <p>Building responsive and interactive websites using HTML, CSS, JavaScript, and PHP.</p>
+                </div>
+                <div class="service">
+                    <h3>Data Analysis and Visualization</h3>
+                    <p>Analyzing data and creating insightful visualizations using Excel, Tableau, and Power BI.</p>
+                </div>
+                <div class="service more-service">
+                    <h3>Programming</h3>
+                    <p>Developing software solutions with Python, Java, and C#.</p>
+                </div>
+                <div class="service more-service">
+                    <h3>Microsoft Office</h3>
+                    <p>Expertise in Word, Excel, and PowerPoint for creating documents, spreadsheets, and presentations.</p>
+                </div>
+                <div class="service more-service">
+                    <h3>Accounting</h3>
+                    <p>Proficient in using Tally ERP9+GST for managing financial accounts.</p>
+                </div>
+                <div class="service more-service">
+                    <h3>Photo Editing</h3>
+                    <p>We provide professional photo editing services including retouching, color correction, background removal, and more.</p>
+                </div>
+                
+                <!-- Video Editing Service -->
+                <div class="service more-service">
+                    <h3>Video Editing</h3>
+                    <p>Our video editing services include cutting, merging, adding effects, transitions, and audio enhancement to create stunning videos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="see-more-container">
+            <button id="see-more-btn">See More</button>
+        </div>
+    </section>
 
     <section id="skills" class="section">
         <div class="container">
             <h2>Skills</h2>
             <ul class="skills-list">
-                <li>Graphic Design</li>
-                <li>Web Design</li>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Photoshop</li>
+                <li>Data Analysis and Visualization: Excel, Tableau, Power BI</li>
+                <li>Programming Languages: Python, Java, C#</li>
+                <li>Web Development: HTML, CSS, JavaScript, PHP</li>
+                <li>Graphic Design: Adobe Photoshop, CorelDraw, InDesign, Adobe Flash</li>
+                <li>Microsoft Office: Word, Excel, PowerPoint</li>
+                <li>Accounting Software: Tally ERP9+GST</li>
             </ul>
         </div>
     </section>
@@ -79,25 +133,25 @@
                 <div class="project">
                     <h3>Indian Restaurant Website</h3>
                     <p><strong>Description:</strong></p>
-        <ul>
-            <li>Home: Welcome page with a call-to-action.</li>
-            <li>Menu: List of dishes with images.</li>
-            <li>Location: Address and Google Map.</li>
-            <li>Reservation: Online booking form.</li>
-            <li>About Us: Information about the restaurant.</li>
-            <li>Reviews: Customer feedback with star ratings.</li>
-        </ul>
+                    <ul>
+                        <li>Home: Welcome page with a call-to-action.</li>
+                        <li>Menu: List of dishes with images.</li>
+                        <li>Location: Address and Google Map.</li>
+                        <li>Reservation: Online booking form.</li>
+                        <li>About Us: Information about the restaurant.</li>
+                        <li>Reviews: Customer feedback with star ratings.</li>
+                    </ul>
                     <a href="https://restaurant-website-0z4l.onrender.com" target="_blank">View Project</a>
                 </div>
                 <div class="project">
                     <h3>Project 2</h3>
                     <p>A description of Project 2.</p>
-                    <a href="#">View Project</a>
+                    <a href="#" target="_blank">View Project</a>
                 </div>
                 <div class="project">
                     <h3>Project 3</h3>
                     <p>A description of Project 3.</p>
-                    <a href="#">View Project</a>
+                    <a href="#" target="_blank">View Project</a>
                 </div>
             </div>
         </div>
@@ -120,7 +174,6 @@
             </form>
         </div>
     </section>
-
 
     <footer>
         <p>&copy; 2024 Pramod's Portfolio. All rights reserved.</p>

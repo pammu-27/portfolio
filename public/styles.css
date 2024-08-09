@@ -477,7 +477,73 @@ section {
     opacity: 1;
     visibility: visible;
 }
+/*services css*/
 
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.service {
+    background: #071952; /* Dark Blue */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+}
+
+.service h3 {
+    color: #66FCF1; /* Light Blue */
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #C5C6C7; /* Silver */
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Add hover effects to services */
+.service:hover {
+    box-shadow: 0 8px 20px rgba(102, 252, 241, 0.3); /* Light Blue */
+    transform: translateY(-5px);
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.more-service {
+    display: none;
+}
+
+/* Styling for the See More button */
+.see-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#see-more-btn {
+    background-color: #071952;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#see-more-btn:hover {
+    background-color: #045c73;
+}
 
 @media (max-width: 768px) {
     nav ul {

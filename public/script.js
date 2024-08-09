@@ -65,3 +65,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         alert('An error occurred. Please try again.');
     });
 });
+
+document.getElementById('see-more-btn').addEventListener('click', function() {
+    var moreServices = document.querySelectorAll('.more-service');
+    moreServices.forEach(function(service) {
+        service.style.display = 'block';
+    });
+
+    // Hide the See More button after clicking
+    this.style.display = 'none';
+});
+
